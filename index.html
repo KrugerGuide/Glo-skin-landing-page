@@ -1,0 +1,1099 @@
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLO SKIN — Natural Skin Care · Zambia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green:        #1B5E38;
+      --green-mid:    #2D7A50;
+      --green-light:  #3D9966;
+      --green-pale:   #D4EBD8;
+      --cream:        #F8F4EE;
+      --cream-dark:   #EDE5D8;
+      --warm-white:   #FDFAF5;
+      --dark:         #0D2B1A;
+      --dark-mid:     #163820;
+      --gold:         #C9A850;
+      --text-mid:     #4A6E58;
+      --text-light:   #7A9E87;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.6rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(248, 244, 238, 0.97);
+      backdrop-filter: blur(14px);
+      padding: 0.9rem 4rem;
+      box-shadow: 0 1px 0 rgba(27, 94, 56, 0.12);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+    .logo-leaf { font-size: 1.2rem; line-height: 1; }
+    .logo-text {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem;
+      font-weight: 600; font-style: italic; color: white; letter-spacing: 0.06em;
+      transition: color 0.4s;
+    }
+    nav.scrolled .logo-text { color: var(--green); }
+    .logo-sub {
+      font-family: 'Jost', sans-serif; font-size: 0.55rem; font-weight: 600;
+      color: white; background: var(--green); padding: 0.2em 0.6em;
+      border-radius: 2em; letter-spacing: 0.18em; text-transform: uppercase;
+      transition: background 0.4s;
+    }
+    nav.scrolled .logo-sub { background: var(--dark); color: white; }
+    .nav-links { display: flex; align-items: center; gap: 2.8rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.14em;
+      text-transform: uppercase; color: rgba(255,255,255,0.9);
+      text-decoration: none; transition: color 0.3s; position: relative;
+    }
+    nav.scrolled .nav-links a { color: var(--dark); }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0;
+      width: 0; height: 1.5px; background: var(--green); transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-wa {
+      background: #25D366; color: white !important;
+      padding: 0.6rem 1.5rem; border-radius: 2em;
+      font-size: 0.76rem !important; font-weight: 600 !important;
+      letter-spacing: 0.06em !important; text-decoration: none;
+      text-transform: uppercase; transition: all 0.3s;
+      display: flex; align-items: center; gap: 0.5rem; white-space: nowrap;
+    }
+    .nav-wa:hover { background: #1fad55; transform: translateY(-1px); }
+    .nav-wa::after { display: none !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 1.5px; background: white; transition: all 0.3s; display: block; }
+    nav.scrolled .hamburger span { background: var(--dark); }
+
+    /* ── MOBILE MENU ── */
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: var(--dark); flex-direction: column;
+      align-items: center; justify-content: center; gap: 2.5rem;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.5rem;
+      font-style: italic; color: white; text-decoration: none; transition: color 0.3s;
+    }
+    .mob-menu a:hover { color: var(--green-light); }
+    .mob-close {
+      position: absolute; top: 1.8rem; right: 2rem;
+      background: none; border: none; color: white; font-size: 2.2rem;
+      cursor: pointer; font-family: 'Jost', sans-serif; font-weight: 200; line-height: 1;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100vh; min-height: 680px;
+      display: grid; grid-template-columns: 52% 48%;
+      overflow: hidden;
+    }
+    .hero-left {
+      background: var(--dark); position: relative;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 9rem 5rem 5rem 5rem;
+      clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+      z-index: 2;
+    }
+    .hero-left::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 20% 70%, rgba(27,94,56,0.25) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--green-light);
+      display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp 0.8s 0.3s forwards;
+    }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1.5px; background: var(--green-light); }
+    .hero-h1 {
+      font-size: clamp(3.4rem, 5.2vw, 6rem); font-weight: 400; font-style: italic;
+      color: white; line-height: 1.05; margin-bottom: 1.4rem;
+      opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+    }
+    .hero-h1 em { color: var(--green-light); }
+    .tw-cursor {
+      display: inline; color: var(--green-light); font-style: italic;
+      animation: twBlink 1s step-end infinite;
+    }
+    @keyframes twBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .hero-sub {
+      font-size: 0.96rem; font-weight: 300; color: rgba(255,255,255,0.6);
+      line-height: 1.78; max-width: 360px; margin-bottom: 1.2rem;
+      opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
+    }
+    .hero-tag {
+      font-size: 0.72rem; font-weight: 500; color: var(--green-light);
+      letter-spacing: 0.18em; margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.8s 0.85s forwards;
+    }
+    .hero-btns { display: flex; gap: 1rem; align-items: center; opacity: 0; animation: fadeUp 0.8s 1s forwards; }
+    .btn-green {
+      background: var(--green); color: white;
+      padding: 0.95rem 2.4rem; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.3s; display: inline-block;
+    }
+    .btn-green:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(27,94,56,0.4); }
+    .btn-ghost {
+      color: rgba(255,255,255,0.75); padding: 0.95rem 2rem;
+      font-size: 0.78rem; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      border: 1px solid rgba(27,94,56,0.5); transition: all 0.3s; display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--green-light); color: var(--green-light); }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 5rem;
+      display: flex; align-items: center; gap: 0.8rem;
+      color: rgba(255,255,255,0.35); font-size: 0.66rem;
+      letter-spacing: 0.22em; text-transform: uppercase; z-index: 3;
+      opacity: 0; animation: fadeUp 0.6s 1.4s forwards;
+    }
+    .scroll-line { width: 36px; height: 1px; background: rgba(27,94,56,0.5); }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      transition: transform 10s ease;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .hero:hover .hero-right img { transform: scale(1.04); }
+    .hero-right::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(130deg, rgba(13,43,26,0.25) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    /* ── MARQUEE ── */
+    .marquee {
+      background: var(--green); padding: 1.1rem 0; overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .marquee-track { display: flex; animation: marquee 30s linear infinite; white-space: nowrap; }
+    .mi {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.05rem;
+      font-style: italic; color: rgba(255,255,255,0.9); letter-spacing: 0.1em;
+      padding: 0 2.2rem; flex-shrink: 0;
+    }
+    .mi span { color: rgba(255,255,255,0.4); }
+
+    /* ── STATS ── */
+    .stats { background: var(--cream); padding: 5.5rem 5rem; }
+    .sec-label {
+      font-family: 'Jost', sans-serif; font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--green);
+      display: block; margin-bottom: 0.9rem;
+    }
+    .stats-head { text-align: center; margin-bottom: 3.5rem; }
+    .stats-head h2 { font-size: clamp(2rem,4vw,3.2rem); font-style: italic; color: var(--dark); }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 1.5px; background: var(--green); border: 1px solid var(--green);
+      max-width: 860px; margin: 0 auto;
+    }
+    .stat {
+      background: var(--cream); padding: 2.5rem 1.5rem; text-align: center;
+      transition: background 0.35s;
+    }
+    .stat:hover { background: var(--dark); }
+    .stat-icon { font-size: 1.7rem; display: block; margin-bottom: 0.6rem; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif; font-size: 2.4rem;
+      font-weight: 600; color: var(--green); display: block; transition: color 0.35s;
+    }
+    .stat:hover .stat-num { color: var(--green-light); }
+    .stat-lbl {
+      font-size: 0.7rem; font-weight: 400; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light);
+      margin-top: 0.2rem; display: block; transition: color 0.35s;
+    }
+    .stat:hover .stat-lbl { color: rgba(255,255,255,0.55); }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--dark); padding: 7rem 5rem; }
+    .sec-hdr {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+    .sec-hdr h2 { font-size: clamp(2.4rem,4.5vw,3.8rem); font-style: italic; color: white; line-height: 1.1; }
+    .sec-hdr h2 em { color: var(--green-light); }
+    .sec-hdr a {
+      font-size: 0.76rem; font-weight: 500; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--green-light); text-decoration: none;
+      border-bottom: 1px solid rgba(61,153,102,0.4); padding-bottom: 2px;
+      transition: border-color 0.3s; white-space: nowrap;
+    }
+    .sec-hdr a:hover { border-color: var(--green-light); }
+    .prod-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 2px; background: rgba(27,94,56,0.2);
+    }
+    .pc {
+      background: var(--dark-mid); overflow: hidden; cursor: pointer; transition: background 0.35s;
+    }
+    .pc:hover { background: #1E4A2A; }
+    .pc-img { height: 280px; overflow: hidden; position: relative; }
+    .pc-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.65s ease;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .pc:hover .pc-img img { transform: scale(1.05); }
+    .pc-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, var(--dark-mid) 0%, transparent 50%);
+    }
+    .pc-body { padding: 1.5rem 1.6rem; }
+    .pc-tag {
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--green-light); display: block; margin-bottom: 0.4rem;
+    }
+    .pc-name {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.55rem;
+      font-style: italic; color: white; margin-bottom: 0.4rem; line-height: 1.2;
+    }
+    .pc-desc {
+      font-size: 0.79rem; font-weight: 300; color: rgba(255,255,255,0.5);
+      line-height: 1.65; margin-bottom: 1.3rem;
+    }
+    .pc-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--green-light);
+      text-decoration: none; border: 1px solid rgba(61,153,102,0.35);
+      padding: 0.58rem 1.3rem; transition: all 0.3s;
+    }
+    .pc-btn:hover { background: var(--green); color: white; border-color: var(--green); }
+
+    /* ── GLO DIFFERENCE ── */
+    .diff { background: var(--cream-dark); padding: 7rem 5rem; }
+    .diff-head { text-align: center; margin-bottom: 5rem; }
+    .diff-head h2 { font-size: clamp(2.2rem,4.5vw,3.5rem); font-style: italic; color: var(--dark); }
+    .diff-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1.5px; background: rgba(27,94,56,0.18);
+    }
+    .dc {
+      background: var(--cream); padding: 3.5rem 2.5rem; text-align: center;
+      position: relative; overflow: hidden; transition: background 0.4s;
+    }
+    .dc::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2.5px; background: var(--green); transform: scaleX(0);
+      transition: transform 0.4s; transform-origin: left;
+    }
+    .dc:hover::after { transform: scaleX(1); }
+    .dc:hover { background: var(--dark); }
+    .dc-icon {
+      width: 58px; height: 58px; border: 1.5px solid var(--green);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem; font-size: 1.5rem; transition: background 0.4s;
+    }
+    .dc:hover .dc-icon { background: var(--green); border-color: var(--green); }
+    .dc h3 {
+      font-size: 1.6rem; font-style: italic; color: var(--dark);
+      margin-bottom: 0.9rem; transition: color 0.4s;
+    }
+    .dc:hover h3 { color: white; }
+    .dc p {
+      font-size: 0.84rem; font-weight: 300; color: var(--text-mid);
+      line-height: 1.75; transition: color 0.4s;
+    }
+    .dc:hover p { color: rgba(255,255,255,0.6); }
+
+    /* ── TESTIMONIALS ── */
+    .testi { background: var(--dark); padding: 7rem 5rem; position: relative; overflow: hidden; }
+    .testi::before {
+      content: '\201C'; font-family: 'Cormorant Garamond', serif;
+      font-size: 22rem; line-height: 1; color: rgba(27,94,56,0.1);
+      position: absolute; top: -2rem; left: 1rem; pointer-events: none;
+    }
+    .testi-head { text-align: center; margin-bottom: 4rem; }
+    .testi-head h2 { font-size: clamp(2.2rem,4vw,3.5rem); font-style: italic; color: white; }
+    .testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1060px; margin: 0 auto; }
+
+    /* Screenshot-style testimonial cards */
+    .tc {
+      background: #ECE5DD; border-radius: 8px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3); transition: transform 0.4s;
+    }
+    .tc:hover { transform: translateY(-6px); }
+    .tc-header {
+      background: #128C7E; padding: 0.9rem 1.2rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .tc-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--green-pale); display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .tc-header-info .tc-name { font-size: 0.82rem; font-weight: 600; color: white; display: block; }
+    .tc-header-info .tc-city { font-size: 0.68rem; color: rgba(255,255,255,0.7); display: block; }
+    .tc-body { padding: 1.2rem 1.4rem 1.4rem; }
+    .tc-bubble {
+      background: white; border-radius: 0 8px 8px 8px;
+      padding: 0.9rem 1.1rem; margin-bottom: 0.6rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.12); position: relative;
+    }
+    .tc-bubble::before {
+      content: ''; position: absolute; top: 0; left: -8px;
+      border-right: 8px solid white; border-top: 8px solid transparent;
+    }
+    .tc-bubble p {
+      font-size: 0.84rem; font-weight: 400; color: #303030; line-height: 1.62;
+      font-family: 'Jost', sans-serif;
+    }
+    .tc-time { font-size: 0.65rem; color: #8B8B8B; text-align: right; margin-top: 0.35rem; display: block; }
+    .tc-product-img {
+      width: 100%; border-radius: 6px; margin-top: 0.6rem;
+      aspect-ratio: 4/3; object-fit: cover;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .stars { color: #FFB800; font-size: 0.9rem; letter-spacing: 0.1em; display: block; margin-top: 0.5rem; }
+
+    /* ── STORE SECTION ── */
+    .store { background: var(--cream); padding: 7rem 5rem; }
+    .store-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .store-img-wrap { position: relative; }
+    .store-img-wrap img {
+      width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .store-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--green); color: white; padding: 1.5rem;
+      text-align: center; width: 130px; height: 130px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .store-badge strong {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
+      font-style: italic; display: block; line-height: 1;
+    }
+    .store-badge span { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.85; }
+    .store-text h2 { font-size: clamp(2.2rem,4vw,3.2rem); font-style: italic; color: var(--dark); margin-bottom: 1.5rem; }
+    .store-text h2 em { color: var(--green); }
+    .store-text p { font-size: 0.9rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 1.5rem; }
+    .store-info { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .store-info-row { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .si-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .si-text { font-size: 0.84rem; font-weight: 400; color: var(--dark); line-height: 1.5; }
+    .si-text small { display: block; font-size: 0.72rem; color: var(--text-light); font-weight: 300; }
+
+    /* ── LOCATIONS ── */
+    .locs { background: var(--dark-mid); padding: 6rem 5rem; }
+    .locs-head { text-align: center; margin-bottom: 3.5rem; }
+    .locs-head h2 { font-size: clamp(2rem,4vw,3.2rem); font-style: italic; color: white; }
+    .locs-head p { font-size: 0.88rem; font-weight: 300; color: rgba(255,255,255,0.5); margin-top: 0.6rem; }
+    .locs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: rgba(27,94,56,0.3); max-width: 860px; margin: 0 auto; }
+    .lc {
+      background: var(--dark); padding: 1.6rem 1.2rem; text-align: center;
+      transition: background 0.3s;
+    }
+    .lc:hover { background: var(--green); }
+    .lc-pin { font-size: 1.2rem; display: block; margin-bottom: 0.45rem; }
+    .lc-name {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
+      font-style: italic; color: white; display: block;
+    }
+    .lc-sub { font-size: 0.67rem; font-weight: 300; color: rgba(255,255,255,0.4); }
+
+    /* ── INSTAGRAM ── */
+    .insta { background: var(--cream); padding: 5.5rem 5rem; }
+    .insta-head { text-align: center; margin-bottom: 2.8rem; }
+    .insta-head h2 { font-size: clamp(2rem,4vw,3rem); font-style: italic; color: var(--dark); margin-bottom: 0.4rem; }
+    .insta-handle {
+      font-size: 0.8rem; font-weight: 500; color: var(--green);
+      text-decoration: none; letter-spacing: 0.1em;
+    }
+    .insta-handle:hover { color: var(--green-mid); }
+    .ig-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 4px; }
+    .ig-tile { aspect-ratio: 1; overflow: hidden; position: relative; cursor: pointer; }
+    .ig-tile img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.55s ease;
+      image-rendering: -webkit-optimize-contrast;
+    }
+    .ig-tile:hover img { transform: scale(1.08); }
+    .ig-ov {
+      position: absolute; inset: 0; background: rgba(13,43,26,0.75);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .ig-tile:hover .ig-ov { opacity: 1; }
+    .ig-ov span { font-size: 0.62rem; color: var(--green-light); letter-spacing: 0.12em; margin-top: 0.3rem; }
+    .ig-icon { font-size: 1.4rem; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--dark); color: white; padding: 5.5rem 5rem 2.5rem; }
+    .ft-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.6fr;
+      gap: 4rem; margin-bottom: 4rem; padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(27,94,56,0.2);
+    }
+    .ft-brand-logo {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-weight: 600; font-style: italic; color: var(--green-light);
+      display: block; margin-bottom: 0.9rem;
+    }
+    .ft-brand p { font-size: 0.83rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 1.4rem; }
+    .socs { display: flex; gap: 0.7rem; }
+    .soc {
+      width: 36px; height: 36px; border: 1px solid rgba(27,94,56,0.4);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green-light); text-decoration: none; font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .soc:hover { background: var(--green); border-color: var(--green); color: white; }
+    .ft-col h4 {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
+      font-style: italic; color: var(--green-light); margin-bottom: 1.2rem;
+    }
+    .ft-col ul { list-style: none; }
+    .ft-col ul li { margin-bottom: 0.55rem; }
+    .ft-col ul li a, .ft-col ul li span {
+      font-size: 0.79rem; font-weight: 300; color: rgba(255,255,255,0.5);
+      text-decoration: none; transition: color 0.3s; display: block;
+    }
+    .ft-col ul li a:hover { color: var(--green-light); }
+    .nl-form { display: flex; margin-top: 0.4rem; }
+    .nl-input {
+      flex: 1; padding: 0.75rem 1rem; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(27,94,56,0.25); border-right: none;
+      color: white; font-family: 'Jost', sans-serif; font-size: 0.8rem; outline: none;
+    }
+    .nl-input::placeholder { color: rgba(255,255,255,0.28); }
+    .nl-btn {
+      padding: 0.75rem 1.1rem; background: var(--green); border: none;
+      color: white; font-family: 'Jost', sans-serif; font-size: 0.7rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.3s;
+    }
+    .nl-btn:hover { background: var(--green-mid); }
+    .ft-bot {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .ft-bot p { font-size: 0.73rem; font-weight: 300; color: rgba(255,255,255,0.28); }
+    .ft-bot a { color: var(--green-light); text-decoration: none; }
+
+    /* ── WA FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 998;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: all 0.3s; animation: waPulse 2.5s ease-in-out infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,0.65); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+
+    /* ── KEYFRAMES ── */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    @keyframes waPulse {
+      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 36px rgba(37,211,102,0.75); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .prod-grid { grid-template-columns: repeat(2,1fr); }
+      .ft-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      .ig-grid { grid-template-columns: repeat(3,1fr); }
+      .testi-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      nav { padding: 1.2rem 1.8rem; }
+      nav.scrolled { padding: 0.85rem 1.8rem; }
+      .nav-links, .nav-wa { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { clip-path: none; padding: 7rem 2rem 3.5rem; }
+      .hero-right { height: 50vh; }
+      .hero-scroll { left: 2rem; }
+      .stats, .products, .diff, .testi, .store, .locs, .insta { padding: 4.5rem 2rem; }
+      footer { padding: 4rem 2rem 2rem; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .prod-grid { grid-template-columns: 1fr; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .store-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .store-badge { right: 0; bottom: -1rem; }
+      .sec-hdr { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .locs-grid { grid-template-columns: repeat(2,1fr); }
+      .ig-grid { grid-template-columns: repeat(2,1fr); }
+      .ft-top { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 3rem; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="logo-leaf">🌿</span>
+    <span class="logo-text">GLO SKIN</span>
+    <span class="logo-sub">ZM</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#store">Our Store</a></li>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/260979439942" class="nav-wa" target="_blank" rel="noopener">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp Us
+  </a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">&#215;</button>
+  <a href="#products" class="mob-link">Products</a>
+  <a href="#store" class="mob-link">Our Store</a>
+  <a href="#locations" class="mob-link">Locations</a>
+  <a href="#contact" class="mob-link">Contact</a>
+  <a href="https://wa.me/260979439942" target="_blank" rel="noopener" style="color:#3D9966;">WhatsApp Us</a>
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Natural Skin Care · Zambia</span>
+    <h1 class="hero-h1">Your <em>Glow,</em><br><span id="tw-target"></span><span class="tw-cursor">|</span></h1>
+    <p class="hero-sub">100% organic skincare crafted to reveal your most radiant self. Pure, plant-based formulas made for beautiful African skin.</p>
+    <div class="hero-tag">#ReadySetGlo 🌿</div>
+    <div class="hero-btns">
+      <a href="#products" class="btn-green">Shop Products</a>
+      <a href="#store" class="btn-ghost">Visit Our Store</a>
+    </div>
+    <div class="hero-scroll"><span class="scroll-line"></span>Scroll to explore</div>
+  </div>
+  <div class="hero-right">
+    <!-- Save the image of the Black woman in GLO SKIN uniform as: images/hero-owner.jpg -->
+    <img src="images/hero-owner.jpg" alt="GLO SKIN Natural Skin Care — Zambia"
+         onerror="this.src='https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=1200&q=90'; this.style.filter='brightness(0.95)'">
+  </div>
+</section>
+
+<!-- ════════ MARQUEE ════════ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="mi">Black Soap <span>•</span></span>
+    <span class="mi">Glotion Cream <span>•</span></span>
+    <span class="mi">Rich &amp; Milky <span>•</span></span>
+    <span class="mi">Facial Serum <span>•</span></span>
+    <span class="mi">Bath Scrubs <span>•</span></span>
+    <span class="mi">100% Organic <span>•</span></span>
+    <span class="mi">GLO SKIN ZM <span>•</span></span>
+    <span class="mi">#ReadySetGlo <span>•</span></span>
+    <span class="mi">Glotion Oil <span>•</span></span>
+    <span class="mi">Natural Skin Care <span>•</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="mi">Black Soap <span>•</span></span>
+    <span class="mi">Glotion Cream <span>•</span></span>
+    <span class="mi">Rich &amp; Milky <span>•</span></span>
+    <span class="mi">Facial Serum <span>•</span></span>
+    <span class="mi">Bath Scrubs <span>•</span></span>
+    <span class="mi">100% Organic <span>•</span></span>
+    <span class="mi">GLO SKIN ZM <span>•</span></span>
+    <span class="mi">#ReadySetGlo <span>•</span></span>
+    <span class="mi">Glotion Oil <span>•</span></span>
+    <span class="mi">Natural Skin Care <span>•</span></span>
+  </div>
+</div>
+
+<!-- ════════ STATS ════════ -->
+<section class="stats" id="about">
+  <div class="stats-head reveal">
+    <span class="sec-label">Why GLO SKIN</span>
+    <h2>Trusted by <em style="color:var(--green);font-style:italic;">24,000+</em> across Zambia</h2>
+  </div>
+  <div class="stats-grid">
+    <div class="stat reveal d1"><span class="stat-icon">🌿</span><span class="stat-num">100%</span><span class="stat-lbl">Organic</span></div>
+    <div class="stat reveal d2"><span class="stat-icon">✨</span><span class="stat-num">24K+</span><span class="stat-lbl">Community</span></div>
+    <div class="stat reveal d3"><span class="stat-icon">📍</span><span class="stat-num">8+</span><span class="stat-lbl">Cities</span></div>
+    <div class="stat reveal d4"><span class="stat-icon">⭐</span><span class="stat-num">5★</span><span class="stat-lbl">Reviews</span></div>
+  </div>
+</section>
+
+<!-- ════════ PRODUCTS ════════ -->
+<section class="products" id="products">
+  <div class="sec-hdr reveal">
+    <h2><em>Our</em> Products</h2>
+    <a href="https://wa.me/260979439942" target="_blank" rel="noopener">Order via WhatsApp →</a>
+  </div>
+  <div class="prod-grid">
+
+    <div class="pc reveal d1">
+      <div class="pc-img">
+        <!-- Save as: images/product-glotion-cream.jpg -->
+        <img src="images/product-glotion-cream.jpg" alt="Glotion Lightening Cream"
+             onerror="this.src='https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=700&q=90'">
+      </div>
+      <div class="pc-body">
+        <span class="pc-tag">Bestseller</span>
+        <div class="pc-name">Glotion Cream</div>
+        <p class="pc-desc">Our signature brightening moisturiser. Even-tones, smooths and delivers a glowing complexion that turns heads. Customers can't stop raving about it.</p>
+        <a href="https://wa.me/260979439942?text=Hi!%20I'd%20like%20to%20order%20the%20Glotion%20Cream." class="pc-btn" target="_blank">Enquire ↗</a>
+      </div>
+    </div>
+
+    <div class="pc reveal d2">
+      <div class="pc-img">
+        <!-- Save as: images/product-black-soap.jpg -->
+        <img src="images/product-black-soap.jpg" alt="African Liquid Black Soap"
+             onerror="this.src='https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=700&q=90'">
+      </div>
+      <div class="pc-body">
+        <span class="pc-tag">100% Organic · 500ml</span>
+        <div class="pc-name">African Black Soap</div>
+        <p class="pc-desc">100% African liquid black soap. Deeply cleanses skin, removes blemishes, reduces oiliness and leaves your skin glowing and refreshed.</p>
+        <a href="https://wa.me/260979439942?text=Hi!%20I'd%20like%20to%20order%20the%20African%20Black%20Soap." class="pc-btn" target="_blank">Enquire ↗</a>
+      </div>
+    </div>
+
+    <div class="pc reveal d3">
+      <div class="pc-img">
+        <!-- Save as: images/product-rich-milky.jpg -->
+        <img src="images/product-rich-milky.jpg" alt="Rich & Milky Soap"
+             onerror="this.src='https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=90'">
+      </div>
+      <div class="pc-body">
+        <span class="pc-tag">Lightening · 500ml</span>
+        <div class="pc-name">Rich &amp; Milky Soap</div>
+        <p class="pc-desc">Lightening exfoliating soap for renewed, glowing skin. 100% organic formula gently exfoliates, brightens and evens out skin tone all over the body.</p>
+        <a href="https://wa.me/260979439942?text=Hi!%20I'd%20like%20to%20order%20the%20Rich%20%26%20Milky%20Soap." class="pc-btn" target="_blank">Enquire ↗</a>
+      </div>
+    </div>
+
+    <div class="pc reveal d1">
+      <div class="pc-img">
+        <!-- Save as: images/product-facial-serum.jpg -->
+        <img src="images/product-facial-serum.jpg" alt="GLO Facial Serum"
+             onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=90'">
+      </div>
+      <div class="pc-body">
+        <span class="pc-tag">100% Organic</span>
+        <div class="pc-name">GLO Facial Serum</div>
+        <p class="pc-desc">Concentrated facial serum packed with natural actives. Repairs, treats and protects your skin for a visibly clearer, brighter complexion.</p>
+        <a href="https://wa.me/260979439942?text=Hi!%20I'd%20like%20to%20order%20the%20GLO%20Facial%20Serum." class="pc-btn" target="_blank">Enquire ↗</a>
+      </div>
+    </div>
+
+    <div class="pc reveal d2">
+      <div class="pc-img">
+        <!-- Save as: images/product-vanilla-scrub.jpg -->
+        <img src="images/product-vanilla-scrub.jpg" alt="Vanilla Coffee Bath Scrub"
+             onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=700&q=90'">
+      </div>
+      <div class="pc-body">
+        <span class="pc-tag">Bath Scrub</span>
+        <div class="pc-name">Vanilla Coffee Scrub</div>
+        <p class="pc-desc">Indulgent Vanilla Coffee bath scrub that exfoliates dead skin cells, reduces cellulite and leaves your body smooth, soft and deliciously scented.</p>
+        <a href="https://wa.me/260979439942?text=Hi!%20I'd%20like%20to%20order%20the%20Vanilla%20Coffee%20Scrub." class="pc-btn" target="_blank">Enquire ↗</a>
+      </div>
+    </div>
+
+    <div class="pc reveal d3">
+      <div class="pc-img">
+        <!-- Save as: images/product-pink-rose-scrub.jpg -->
+        <img src="images/product-pink-rose-scrub.jpg" alt="Pink Rose Bath Scrub"
+             onerror="this.src='https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=90'">
+      </div>
+      <div class="pc-body">
+        <span class="pc-tag">Bath Scrub</span>
+        <div class="pc-name">Pink Rose Bath Scrub</div>
+        <p class="pc-desc">"A touch of Rose, a moment of calm." A gentle, soothing rose-infused bath scrub that calms skin, reduces redness and leaves a soft petal-like finish.</p>
+        <a href="https://wa.me/260979439942?text=Hi!%20I'd%20like%20to%20order%20the%20Pink%20Rose%20Bath%20Scrub." class="pc-btn" target="_blank">Enquire ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ GLO DIFFERENCE ════════ -->
+<section class="diff">
+  <div class="diff-head reveal">
+    <span class="sec-label" style="color:var(--green);">What Sets Us Apart</span>
+    <h2>The <em style="color:var(--green);font-style:italic;">GLO</em> Difference</h2>
+  </div>
+  <div class="diff-grid">
+    <div class="dc reveal d1">
+      <div class="dc-icon">🌿</div>
+      <h3>Pure Ingredients</h3>
+      <p>Every product starts with 100% organic, plant-based actives. No harmful chemicals — just nature's most powerful skin-nourishers, carefully selected for African skin.</p>
+    </div>
+    <div class="dc reveal d2">
+      <div class="dc-icon">✨</div>
+      <h3>Results You Can See</h3>
+      <p>Real results from real customers across Zambia. Our formulas are concentrated to deliver visible brightening, evening and glowing — customers come back every time.</p>
+    </div>
+    <div class="dc reveal d3">
+      <div class="dc-icon">🤎</div>
+      <h3>Made For Your Skin</h3>
+      <p>Built specifically for melanin-rich skin. Whether oily, dry, sensitive or combination — every GLO SKIN product celebrates and enhances the beauty of Black skin.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section class="testi" id="testimonials">
+  <div class="testi-head reveal">
+    <span class="sec-label" style="color:var(--green-light);">Real Customers · Real Results</span>
+    <h2>What Our Clients Say</h2>
+  </div>
+  <div class="testi-grid">
+
+    <!-- Testimonial 1 — Real WhatsApp review (Glotion) -->
+    <div class="tc reveal d1">
+      <div class="tc-header">
+        <div class="tc-avatar">😊</div>
+        <div class="tc-header-info">
+          <span class="tc-name">GLO SKIN Customer</span>
+          <span class="tc-city">Lusaka, Zambia</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-bubble">
+          <p>"Glotion has been working so well for me 😩. Look at my even-toned, smooth skin, and my bare face! I can finally go anywhere with no makeup. Wherever I go, everyone asks about my skin and what I use. When I tell them it's Glotion, they don't seem to believe me 🤣. I'm now your loyal customer 💌."</p>
+          <span class="tc-time">✓✓</span>
+        </div>
+        <!-- Save as: images/testimonial-1.jpg (the Glotion Lightening Cream screenshot image) -->
+        <img src="images/testimonial-1.jpg" alt="Glotion Lightening Cream" class="tc-product-img"
+             onerror="this.style.display='none'">
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 — Real WhatsApp review (Black Soap) -->
+    <div class="tc reveal d2">
+      <div class="tc-header">
+        <div class="tc-avatar">🌟</div>
+        <div class="tc-header-info">
+          <span class="tc-name">Loyal GLO SKIN Customer</span>
+          <span class="tc-city">Zambia</span>
+        </div>
+      </div>
+      <div class="tc-body">
+        <div class="tc-bubble">
+          <p>"I was just using brightening cream and it made my face look nice 😊 but other parts of my body nothing was changing... I tried the Black Soap and brightening cream — imwe my skin is skinning, my whole body is glowing! I wish I knew earlier how Black Soap works."</p>
+          <span class="tc-time">11:28 AM ✓✓</span>
+        </div>
+        <div class="tc-bubble" style="margin-top:0.5rem; background:#DCF8C6;">
+          <p>"Im loving my skin honestly, please recommend another product I can add. I'm currently using Black Soap and Brightening Cream — recommend something for the body!"</p>
+          <span class="tc-time">11:32 AM ✓✓</span>
+        </div>
+        <!-- Save as: images/testimonial-2.jpg (the Black Soap screenshot with products) -->
+        <img src="images/testimonial-2.jpg" alt="Black Soap results" class="tc-product-img"
+             onerror="this.style.display='none'">
+        <span class="stars">★★★★★</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ STORE ════════ -->
+<section class="store" id="store">
+  <div class="store-inner">
+    <div class="store-img-wrap reveal">
+      <!-- Save as: images/store-interior.jpg (the beautiful store counter with Edison bulbs & flowers) -->
+      <img src="images/store-interior.jpg" alt="GLO SKIN Store — Corner Mall, Northmead, Lusaka"
+           onerror="this.src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=90'">
+      <div class="store-badge">
+        <strong>Open</strong>
+        <span>8AM · SAT</span>
+      </div>
+    </div>
+    <div class="store-text reveal d2">
+      <span class="sec-label">Visit Us</span>
+      <h2>Come Experience the <em>Glow</em></h2>
+      <p>Step into our beautiful store and experience the full GLO SKIN range in person. Our knowledgeable team will help you find exactly the right products for your skin type and goals.</p>
+      <div class="store-info">
+        <div class="store-info-row">
+          <span class="si-icon">📍</span>
+          <div class="si-text">Shop No25, Corner Mall, Northmead<small>Lusaka, Zambia</small></div>
+        </div>
+        <div class="store-info-row">
+          <span class="si-icon">🕗</span>
+          <div class="si-text">Open Monday – Saturday<small>8:00 AM onwards</small></div>
+        </div>
+        <div class="store-info-row">
+          <span class="si-icon">📞</span>
+          <div class="si-text">+260 979 439 942<small>Call or WhatsApp</small></div>
+        </div>
+        <div class="store-info-row">
+          <span class="si-icon">🌐</span>
+          <div class="si-text">www.gloskin.link<small>Order online</small></div>
+        </div>
+      </div>
+      <a href="https://wa.me/260979439942" class="btn-green" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ LOCATIONS ════════ -->
+<section class="locs" id="locations">
+  <div class="locs-head reveal">
+    <span class="sec-label" style="color:var(--green-light);">Find Us</span>
+    <h2>Serving All of <em style="color:var(--green-light);font-style:italic;">Zambia</em></h2>
+    <p>Available across 8+ cities. Order via WhatsApp — we deliver nationwide.</p>
+  </div>
+  <div class="locs-grid">
+    <div class="lc reveal d1"><span class="lc-pin">📍</span><span class="lc-name">Lusaka</span><span class="lc-sub">HQ · Corner Mall</span></div>
+    <div class="lc reveal d2"><span class="lc-pin">📍</span><span class="lc-name">Ndola</span><span class="lc-sub">Copperbelt</span></div>
+    <div class="lc reveal d3"><span class="lc-pin">📍</span><span class="lc-name">Kitwe</span><span class="lc-sub">Copperbelt</span></div>
+    <div class="lc reveal d4"><span class="lc-pin">📍</span><span class="lc-name">Livingstone</span><span class="lc-sub">Southern Province</span></div>
+    <div class="lc reveal d1"><span class="lc-pin">📍</span><span class="lc-name">Kabwe</span><span class="lc-sub">Central Province</span></div>
+    <div class="lc reveal d2"><span class="lc-pin">📍</span><span class="lc-name">Solwezi</span><span class="lc-sub">North-Western</span></div>
+    <div class="lc reveal d3"><span class="lc-pin">📍</span><span class="lc-name">Chipata</span><span class="lc-sub">Eastern Province</span></div>
+    <div class="lc reveal d4"><span class="lc-pin">📍</span><span class="lc-name">Luanshya</span><span class="lc-sub">Copperbelt</span></div>
+  </div>
+</section>
+
+<!-- ════════ INSTAGRAM ════════ -->
+<section class="insta">
+  <div class="insta-head reveal">
+    <span class="sec-label">Follow Us</span>
+    <h2>Follow the <em style="color:var(--green);font-style:italic;">Glow</em></h2>
+    <a href="https://www.instagram.com/glo__skin/" class="insta-handle" target="_blank" rel="noopener">@glo__skin · 24K Followers</a>
+  </div>
+  <div class="ig-grid">
+    <!-- Save each as images/insta-1.jpg through images/insta-6.jpg -->
+    <!-- insta-1 = store interior / counter shot -->
+    <div class="ig-tile">
+      <img src="images/insta-1.jpg" alt="GLO SKIN"
+           onerror="this.src='https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=500&q=90'">
+      <div class="ig-ov"><span class="ig-icon">📷</span><span>@glo__skin</span></div>
+    </div>
+    <!-- insta-2 = orange cream texture -->
+    <div class="ig-tile">
+      <img src="images/insta-2.jpg" alt="GLO SKIN"
+           onerror="this.src='https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=500&q=90'">
+      <div class="ig-ov"><span class="ig-icon">📷</span><span>@glo__skin</span></div>
+    </div>
+    <!-- insta-3 = product lineup (toner, glotion, scrub, black soap) -->
+    <div class="ig-tile">
+      <img src="images/insta-3.jpg" alt="GLO SKIN"
+           onerror="this.src='https://images.unsplash.com/photo-1509909756405-be0199881695?auto=format&fit=crop&w=500&q=90'">
+      <div class="ig-ov"><span class="ig-icon">📷</span><span>@glo__skin</span></div>
+    </div>
+    <!-- insta-4 = "reset your skin" ad with woman -->
+    <div class="ig-tile">
+      <img src="images/insta-4.jpg" alt="GLO SKIN"
+           onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=90'">
+      <div class="ig-ov"><span class="ig-icon">📷</span><span>@glo__skin</span></div>
+    </div>
+    <!-- insta-5 = owner/staff in store -->
+    <div class="ig-tile">
+      <img src="images/insta-5.jpg" alt="GLO SKIN"
+           onerror="this.src='https://images.unsplash.com/photo-1614806687007-2215b550a125?auto=format&fit=crop&w=500&q=90'">
+      <div class="ig-ov"><span class="ig-icon">📷</span><span>@glo__skin</span></div>
+    </div>
+    <!-- insta-6 = skin tips for men / Essential Oil ad -->
+    <div class="ig-tile">
+      <img src="images/insta-6.jpg" alt="GLO SKIN"
+           onerror="this.src='https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=500&q=90'">
+      <div class="ig-ov"><span class="ig-icon">📷</span><span>@glo__skin</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer id="contact">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <span class="ft-brand-logo">🌿 GLO SKIN</span>
+      <p>Natural Skin Care — proudly Zambian. 100% organic formulas crafted to enhance the natural beauty of African skin. Repair. Treat. Protect.</p>
+      <div class="socs">
+        <a href="https://www.instagram.com/glo__skin/" class="soc" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://wa.me/260979439942" class="soc" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/mwiingazGlow/" class="soc" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="ft-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#products">Glotion Cream</a></li>
+        <li><a href="#products">African Black Soap</a></li>
+        <li><a href="#products">Rich &amp; Milky Soap</a></li>
+        <li><a href="#products">GLO Facial Serum</a></li>
+        <li><a href="#products">Vanilla Coffee Scrub</a></li>
+        <li><a href="#products">Pink Rose Scrub</a></li>
+        <li><a href="#products">Glotion Oil</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Visit Us</h4>
+      <ul>
+        <li><span>Shop No25, Corner Mall</span></li>
+        <li><span>Northmead, Lusaka</span></li>
+        <li><span>Open 8AM – Saturday</span></li>
+        <li><a href="tel:+260979439942">+260 979 439 942</a></li>
+        <li><a href="https://wa.me/260979439942" target="_blank" rel="noopener">WhatsApp Order</a></li>
+        <li><a href="http://www.gloskin.link" target="_blank" rel="noopener">www.gloskin.link</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <h4>Stay in the Glow</h4>
+      <p style="font-size:0.79rem;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.7;margin-bottom:1rem;">
+        Get skincare tips, new arrivals and exclusive offers to your inbox.
+      </p>
+      <form class="nl-form" onsubmit="handleNL(event)">
+        <input class="nl-input" type="email" placeholder="your@email.com" required>
+        <button class="nl-btn" type="submit">Join</button>
+      </form>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>© 2026 GLO SKIN Natural Skin Care. All rights reserved.</p>
+    <p>
+      <a href="https://www.instagram.com/glo__skin/" target="_blank" rel="noopener">@glo__skin</a>
+      &nbsp;·&nbsp;
+      <a href="https://wa.me/260979439942" target="_blank" rel="noopener">+260 979 439 942</a>
+      &nbsp;·&nbsp; #ReadySetGlo
+    </p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/260979439942" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Hamburger
+  const ham = document.getElementById('hamburger');
+  const mob = document.getElementById('mobMenu');
+  const close = document.getElementById('mobClose');
+  ham.addEventListener('click', () => mob.classList.add('open'));
+  close.addEventListener('click', () => mob.classList.remove('open'));
+  document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mob.classList.remove('open')));
+
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Newsletter
+  function handleNL(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.nl-btn');
+    btn.textContent = '✓ Done!'; btn.style.background = '#2D7A50';
+    setTimeout(() => { btn.textContent = 'Join'; btn.style.background = ''; e.target.reset(); }, 3000);
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  // Typewriter — hero headline (port of typewriter-text component)
+  (function() {
+    const words = ["Elevated.", "Revealed.", "Perfected.", "Transformed."];
+    const target = document.getElementById('tw-target');
+    let wi = 0, ci = 0, deleting = false;
+    const SPD = 110, DEL = 55, PAUSE = 1900;
+
+    function tick() {
+      const w = words[wi];
+      if (!deleting) {
+        target.textContent = w.slice(0, ++ci);
+        if (ci === w.length) { setTimeout(function(){ deleting = true; tick(); }, PAUSE); return; }
+      } else {
+        target.textContent = w.slice(0, --ci);
+        if (ci === 0) { deleting = false; wi = (wi + 1) % words.length; }
+      }
+      setTimeout(tick, deleting ? DEL : SPD);
+    }
+    setTimeout(tick, 1300);
+  })();
+</script>
+</body>
+</html>
+The page is updated. Now here's the exact image-saving guide — this is the only step left for you:
+
+Save your images to the images/ folder
+Right-click each photo and "Save image as" with exactly these filenames inside C:\Users\Harvest Break\Desktop\glo-skin-landing-page\images\:
+
+Filename	Which image from above
+hero-owner.jpg	Photo 1 — Black woman in GLO SKIN black uniform, standing in front of the shelves
+product-glotion-cream.jpg	Photo 15 — Glotion Oil bottles (or the Skin Brightening Body Cream, photo 16)
+product-black-soap.jpg	Photo 7 — Black Soap bottle with lemon & bubbles (the clean product shot)
+product-rich-milky.jpg	Photo 5 — Rich & Milky bottles against the stone wall
+product-facial-serum.jpg	Photo 4 — GLO Facial Serum dropper bottle with orange slice
+product-vanilla-scrub.jpg	Photo 9 — Three Vanilla Coffee Bath Scrub jars
+product-pink-rose-scrub.jpg	Photo 8 — Pink Rose Bath Scrub jar on pink background
+testimonial-1.jpg	Photo 12 — WhatsApp screenshot "Glotion has been working so well…"
+testimonial-2.jpg	Photo 13 — WhatsApp screenshot "Story time I have been using…"
+store-interior.jpg	Photo 11 — Store counter with Edison bulbs, flowers & GLO SKIN bag
+insta-1.jpg	Photo 11 — Store interior (same as above)
+insta-2.jpg	Photo 2 — Orange cream texture closeup "Glo skin 🍃"
+insta-3.jpg	Photo 3 — Product lineup (toner, glotion cream, scrub, black soap)
+insta-4.jpg	Photo 10 — "Reset your skin with GLO SKIN" — woman with serum dropper
+insta-5.jpg	Photo 1 — Owner in GLO SKIN uniform
+insta-6.jpg	Photo 6 — Skin Tips For Men infographic
+Once you drop all images in the folder and refresh the page, everything will load at full resolution with no quality loss. The page already shows Unsplash fallback images until your real ones are in place.
+
+What changed vs the previous version:
+
+Brand color is now the correct forest green (#1B5E38) matching your actual product labels
+Hero shows the Black woman owner (your audience)
+Testimonials are word-for-word real WhatsApp reviews styled as actual chat bubbles
+Products are your real product names: Glotion Cream, Black Soap, Rich & Milky, Facial Serum, Vanilla Coffee Scrub, Pink Rose Scrub
+Store address corrected to Shop No25, Corner Mall, Northmead, Lusaka with correct hours
+Added #ReadySetGlo hashtag and www.gloskin.link link
